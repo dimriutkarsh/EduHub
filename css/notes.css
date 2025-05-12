@@ -1,0 +1,198 @@
+/* Notes Page Specific Styles */
+
+/* Section styling */
+.section-title {
+  font-size: var(--font-size-xxl);
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: var(--space-xs);
+}
+
+.section-description {
+  text-align: center;
+  color: var(--text-secondary);
+  margin-bottom: var(--space-lg);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subjects-section {
+  padding: var(--space-xl) 0;
+  background-color: var(--background-alt);
+}
+
+/* Subject cards styling */
+.subjects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--space-lg);
+}
+
+.subject-card {
+  background-color: var(--background);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  cursor: pointer;
+  position: relative;
+  border-top: 4px solid var(--primary-color);
+}
+
+.subject-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.subject-card:nth-child(2n) {
+  border-top-color: var(--accent-color);
+}
+
+.subject-card:nth-child(3n) {
+  border-top-color: var(--secondary-color);
+}
+
+.subject-card:nth-child(4n) {
+  border-top-color: var(--success);
+}
+
+.subject-icon {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(10, 25, 47, 0.05);
+  font-size: 3rem;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.subject-card:hover .subject-icon {
+  background-color: rgba(10, 25, 47, 0.1);
+}
+
+.subject-card:nth-child(2n) .subject-icon i {
+  color: var(--accent-color);
+}
+
+.subject-card:nth-child(3n) .subject-icon i {
+  color: var(--secondary-color);
+}
+
+.subject-card:nth-child(4n) .subject-icon i {
+  color: var(--success);
+}
+
+.subject-details {
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.subject-title {
+  font-size: var(--font-size-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+  color: var(--primary-color);
+}
+
+.subject-description {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-sm);
+}
+
+.subject-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--text-secondary);
+}
+
+/* Note type selection modal */
+.note-type-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-md);
+}
+
+.note-type-option {
+  padding: var(--space-lg);
+  border-radius: var(--border-radius);
+  background-color: var(--background-alt);
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  border: 2px solid transparent;
+}
+
+.note-type-option:hover {
+  background-color: var(--background);
+  border-color: var(--accent-color);
+  transform: translateY(-5px);
+}
+
+.note-type-icon {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+  margin-bottom: var(--space-sm);
+}
+
+.note-type-option[data-type="short"] .note-type-icon {
+  color: var(--accent-color);
+}
+
+.note-type-option[data-type="regular"] .note-type-icon {
+  color: var(--secondary-color);
+}
+
+.note-type-option h4 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-xs);
+}
+
+.note-type-option p {
+  color: var(--text-secondary);
+  font-size: var(--font-size-sm);
+}
+
+/* Back button */
+.back-to-subjects-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+}
+
+/* Animation for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.subject-card {
+  animation: fadeInUp 0.5s ease forwards;
+  animation-delay: calc(var(--animation-order) * 0.1s);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .note-type-options {
+    grid-template-columns: 1fr;
+  }
+  
+  .subject-card {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  .subjects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  }
+}

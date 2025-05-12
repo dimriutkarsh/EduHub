@@ -1,0 +1,565 @@
+/* 
+   AcademicHub - Main Stylesheet
+   Version: 1.0.0
+   Author: Bolt
+*/
+
+/* -----------------------------
+   Table of Contents:
+   1. CSS Reset & Base Styles
+   2. Typography
+   3. Layout & Containers
+   4. Header & Navigation
+   5. Page Header
+   6. Contact Section
+   7. Form Elements
+   8. Footer
+   9. Utility Classes
+   10. Animations
+------------------------------ */
+
+/* -----------------------------
+   1. CSS Reset & Base Styles
+------------------------------ */
+:root {
+  /* Color Variables */
+  --color-white: #ffffff;
+  --color-dark-blue: #0A2463;
+  --color-dark-blue-800: #0c2b76;
+  --color-dark-blue-700: #133090;
+  --color-dark-blue-600: #1b3cb1;
+  --color-dark-blue-500: #254ad3;
+  --color-dark-blue-400: #4a69e2;
+  --color-dark-blue-300: #7088ec;
+  --color-dark-blue-200: #9eacf3;
+  --color-dark-blue-100: #d0d8fa;
+  
+  --color-yellow: #FFD166;
+  --color-yellow-800: #e6bc5c;
+  --color-yellow-700: #cca751;
+  --color-yellow-600: #b39247;
+  --color-yellow-500: #997d3d;
+  --color-yellow-400: #806832;
+  --color-yellow-300: #665328;
+  --color-yellow-200: #4d3e1e;
+  --color-yellow-100: #332914;
+  
+  --color-grey-900: #1a1a1a;
+  --color-grey-800: #333333;
+  --color-grey-700: #4d4d4d;
+  --color-grey-600: #666666;
+  --color-grey-500: #808080;
+  --color-grey-400: #999999;
+  --color-grey-300: #b3b3b3;
+  --color-grey-200: #cccccc;
+  --color-grey-100: #e6e6e6;
+  --color-grey-50: #f5f5f5;
+  
+  /* Spacing Variables */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-xxl: 48px;
+  
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  
+  /* Transition */
+  --transition-fast: 0.15s ease;
+  --transition-medium: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Shadow */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.14);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.07), 0 5px 8px rgba(0, 0, 0, 0.05);
+  
+  /* Container Width */
+  --container-width: 1140px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  color: var(--color-grey-800);
+  background-color: var(--color-white);
+}
+
+/* -----------------------------
+   2. Typography
+------------------------------ */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--color-dark-blue);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: var(--space-md);
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+p {
+  margin-bottom: var(--space-md);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--color-dark-blue);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-yellow);
+}
+
+/* -----------------------------
+   3. Layout & Containers
+------------------------------ */
+.container {
+  width: 100%;
+  max-width: var(--container-width);
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+section {
+  padding: var(--space-xl) 0;
+}
+
+/* -----------------------------
+   4. Header & Navigation
+------------------------------ */
+header {
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-sm);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-md) 0;
+}
+
+.logo h1 {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  color: var(--color-dark-blue);
+}
+
+.logo span {
+  color: var(--color-yellow);
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin-left: var(--space-lg);
+}
+
+.nav-links a {
+  position: relative;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 0.5px;
+  padding: var(--space-xs) 0;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-yellow);
+  transition: width var(--transition-medium);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links li.active a {
+  color: var(--color-yellow);
+}
+
+.nav-links li.active a::after {
+  width: 100%;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 24px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 2px;
+  width: 100%;
+  background-color: var(--color-dark-blue);
+  transition: all var(--transition-medium);
+}
+
+/* -----------------------------
+   5. Page Header
+------------------------------ */
+.page-header {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  padding: var(--space-xl) 0;
+  text-align: center;
+}
+
+.page-header h2 {
+  color: var(--color-white);
+  margin-bottom: var(--space-sm);
+}
+
+.breadcrumb {
+  color: var(--color-grey-300);
+  font-size: 0.9rem;
+}
+
+.breadcrumb a {
+  color: var(--color-yellow);
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------
+   6. Contact Section
+------------------------------ */
+.contact-section {
+  padding: var(--space-xxl) 0;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-xl);
+}
+
+.contact-info, .contact-form {
+  background-color: var(--color-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-info h3, .contact-form h3 {
+  color: var(--color-dark-blue);
+  margin-bottom: var(--space-lg);
+  position: relative;
+  padding-bottom: var(--space-md);
+}
+
+.contact-info h3::after, .contact-form h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  width: 60px;
+  background-color: var(--color-yellow);
+}
+
+.contact-details {
+  margin-top: var(--space-xl);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: var(--space-lg);
+}
+
+.contact-item i {
+  color: var(--color-yellow);
+  font-size: 1.5rem;
+  margin-right: var(--space-md);
+  margin-top: var(--space-xs);
+}
+
+.contact-item h4 {
+  color: var(--color-dark-blue);
+  margin-bottom: var(--space-xs);
+}
+
+.contact-item p {
+  color: var(--color-grey-600);
+  margin-bottom: 0;
+}
+
+.social-links {
+  display: flex;
+  margin-top: var(--space-xl);
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  margin-right: var(--space-md);
+  transition: all var(--transition-medium);
+}
+
+.social-links a:hover {
+  background-color: var(--color-yellow);
+  color: var(--color-dark-blue);
+  transform: translateY(-3px);
+}
+
+/* -----------------------------
+   7. Form Elements
+------------------------------ */
+.form-group {
+  margin-bottom: var(--space-lg);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--space-sm);
+  color: var(--color-dark-blue);
+  font-weight: 500;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: var(--space-md);
+  border: 1px solid var(--color-grey-200);
+  border-radius: var(--radius-sm);
+  font-family: inherit;
+  transition: border var(--transition-fast);
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--color-dark-blue);
+  box-shadow: 0 0 0 2px rgba(10, 36, 99, 0.1);
+}
+
+.resource-upload input {
+  border: 2px dashed var(--color-grey-300);
+  padding: var(--space-lg);
+  background-color: var(--color-grey-50);
+  cursor: pointer;
+  transition: all var(--transition-medium);
+}
+
+.resource-upload input:hover {
+  border-color: var(--color-dark-blue);
+  background-color: var(--color-grey-100);
+}
+
+.file-info {
+  font-size: 0.8rem;
+  color: var(--color-grey-500);
+  margin-top: var(--space-sm);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--space-md) var(--space-lg);
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  text-align: center;
+  transition: all var(--transition-medium);
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-dark-blue-700);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-primary:active {
+  transform: translateY(0);
+}
+
+.form-success {
+  text-align: center;
+  padding: var(--space-xl);
+}
+
+.form-success i {
+  font-size: 3rem;
+  color: #4CAF50;
+  margin-bottom: var(--space-md);
+  animation: success-bounce 1s ease;
+}
+
+.form-success h3 {
+  color: var(--color-dark-blue);
+  margin-bottom: var(--space-md);
+}
+
+/* -----------------------------
+   8. Footer
+------------------------------ */
+footer {
+  background-color: var(--color-dark-blue);
+  color: var(--color-white);
+  padding: var(--space-xl) 0 0;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-xl);
+  padding-bottom: var(--space-xl);
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-contact h3 {
+  color: var(--color-white);
+  margin-bottom: var(--space-md);
+  position: relative;
+  padding-bottom: var(--space-sm);
+}
+
+.footer-about h3::after,
+.footer-links h3::after,
+.footer-contact h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 40px;
+  background-color: var(--color-yellow);
+}
+
+.footer-about p {
+  color: var(--color-grey-300);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: var(--space-sm);
+}
+
+.footer-links a {
+  color: var(--color-grey-300);
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-yellow);
+  padding-left: var(--space-sm);
+}
+
+.footer-contact p {
+  color: var(--color-grey-300);
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+}
+
+.footer-contact i {
+  color: var(--color-yellow);
+  margin-right: var(--space-sm);
+  width: 20px;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: var(--space-md) 0;
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: var(--color-grey-400);
+  margin-bottom: 0;
+  font-size: 0.9rem;
+}
+
+/* -----------------------------
+   9. Utility Classes
+------------------------------ */
+.text-center {
+  text-align: center;
+}
+
+.mt-sm { margin-top: var(--space-sm); }
+.mt-md { margin-top: var(--space-md); }
+.mt-lg { margin-top: var(--space-lg); }
+.mt-xl { margin-top: var(--space-xl); }
+
+.mb-sm { margin-bottom: var(--space-sm); }
+.mb-md { margin-bottom: var(--space-md); }
+.mb-lg { margin-bottom: var(--space-lg); }
+.mb-xl { margin-bottom: var(--space-xl); }
+
+/* -----------------------------
+   10. Animations
+------------------------------ */
+@keyframes success-bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-20px);
+  }
+  60% {
+    transform: translateY(-10px);
+  }
+}

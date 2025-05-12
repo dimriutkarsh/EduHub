@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - EduHub</title>
+  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <meta name="description" content="Contact AcademicHub for resource requests or to submit your own academic materials">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav class="navbar">
+        <div class="logo">
+          <h1>Edu<span>Hub</span></h1>
+        </div>
+        <div class="menu-toggle" id="menu-toggle">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="../index.html">Home</a></li>
+          <li><a href="pages/question-papers.html">Question Papers</a></li>
+          <li><a href="pages/assignments.html">Assignments</a></li>
+          <li><a href="pages/notes.html">Notes</a></li>
+          <li><a href="pages/about.html">About</a></li>
+          <li class="active"><a href="pages/contact.html">Contact</a></li>
+          <!-- <li><a href="admin-dashboard.html">Admin</a></li> -->
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-header">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <div class="breadcrumb">
+          <a href="index.html">Home</a> / <span>Contact</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <div class="container">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <h3>Get in Touch</h3>
+            <p>Need specific resources or want to contribute? Reach out to us and we'll get back to you as soon as possible.</p>
+            
+            <div class="contact-details">
+              <div class="contact-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email</h4>
+                  <p>contact@academichub.edu</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Phone</h4>
+                  <p>+1 (123) 456-7890</p>
+                </div>
+              </div>
+              
+              <div class="contact-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Address</h4>
+                  <p>THDC INSTITUE OF HYDROPOWER ENGINEERING AND TECHNOLOGY</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="social-links">
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+          </div>
+          
+          <div class="contact-form">
+            <h3>Send a Message</h3>
+            
+            <form id="contact-form">
+              <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="email">Your Email</label>
+                <input type="email" id="email" name="email" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="subject">Subject</label>
+                <input type="text" id="subject" name="subject" required>
+              </div>
+              
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+              </div>
+              
+              <div class="form-group resource-upload">
+                <label for="resource-upload">Upload Resource (optional)</label>
+                <input type="file" id="resource-upload" name="resource">
+                <p class="file-info">Max file size: 10MB. Supported formats: PDF, DOC, PPT</p>
+              </div>
+              
+              <button type="submit" class="btn btn-primary">Send Message</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-about">
+          <h3>About AcademicHub</h3>
+          <p>AcademicHub is dedicated to providing students with access to high-quality academic resources to aid in their learning journey.</p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="pages/question-papers.html">Question Papers</a></li>
+            <li><a href="pages/assignments.html">Assignments</a></li>
+            <li><a href="pages/notes.html">Notes</a></li>
+            <li><a href="pages/about.html">About</a></li>
+            <li><a href="pages/contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p><i class="fas fa-envelope"></i> contact@academichub.edu</p>
+          <p><i class="fas fa-phone"></i> +1 (123) 456-7890</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 AcademicHub. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    // Contact form submission
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // In a real application, you would send the form data to a server
+        // For this demo, we'll just show a success message
+        
+        // Get form data
+        const formData = new FormData(contactForm);
+        
+        // Create success message
+        const successMessage = document.createElement('div');
+        successMessage.className = 'form-success';
+        successMessage.innerHTML = `
+          <i class="fas fa-check-circle"></i>
+          <h3>Thank You!</h3>
+          <p>Your message has been sent successfully. We'll get back to you soon.</p>
+        `;
+        
+        // Replace form with success message
+        contactForm.innerHTML = '';
+        contactForm.appendChild(successMessage);
+      });
+    }
+  </script>
+</body>
+</html>

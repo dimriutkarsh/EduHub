@@ -1,0 +1,203 @@
+/* Additional CSS for improved filter feedback */
+
+/* Filter group styling improvements */
+.filter-group {
+  position: relative;
+}
+
+.filter-group select {
+  transition: all 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+  padding-right: 28px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23555' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 8px center;
+}
+
+.filter-group select:focus,
+.filter-group select:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 2px rgba(255, 193, 7, 0.1);
+}
+
+/* Search container improvements */
+.search-container {
+  position: relative;
+  max-width: 100%;
+  margin-top: 1rem;
+}
+
+.search-container input {
+  transition: all 0.3s ease;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius) 0 0 var(--border-radius);
+  padding: 12px 16px;
+  width: 100%;
+}
+
+.search-container input:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 2px rgba(10, 25, 47, 0.1);
+}
+
+.search-container button {
+  background-color: var(--primary-color);
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  padding: 12px 16px;
+}
+
+.search-container button:hover {
+  background-color: var(--primary-light);
+}
+
+/* Apply filters button enhancement */
+#apply-filters {
+  position: relative;
+  overflow: hidden;
+}
+
+#apply-filters::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: all 0.6s ease;
+}
+
+#apply-filters:hover::after {
+  left: 100%;
+}
+
+/* Reset filters button styling */
+#reset-filters {
+  background: transparent;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+  padding: 12px 24px;
+  transition: all 0.3s ease;
+}
+
+#reset-filters:hover {
+  background-color: rgba(10, 25, 47, 0.05);
+}
+
+/* Resource card hover animation */
+.resource-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.resource-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal animation improvement */
+.modal {
+  transition: opacity 0.4s ease;
+}
+
+.modal-content {
+  transform: scale(0.95);
+  transition: transform 0.4s ease;
+}
+
+.modal.active .modal-content {
+  transform: scale(1);
+}
+
+/* Pagination active state enhancement */
+.pagination-number.active {
+  position: relative;
+}
+
+.pagination-number.active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background-color: var(--accent-color);
+}
+
+/* Empty results message */
+.empty-results {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--text-secondary);
+  background-color: var(--background-alt);
+  border-radius: var(--border-radius);
+  margin: 2rem 0;
+}
+
+.empty-results i {
+  font-size: 3rem;
+  color: var(--primary-light);
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+/* Loading animation for filtering */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.loading-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(10, 25, 47, 0.1);
+  border-radius: 50%;
+  border-top-color: var(--primary-color);
+  animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Responsive improvements for filters */
+@media (max-width: 768px) {
+  .filters {
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+  
+  .filter-group,
+  #apply-filters,
+  #reset-filters {
+    width: 100%;
+  }
+  
+  #reset-filters {
+    margin-left: 0;
+    margin-top: var(--space-sm);
+  }
+  
+  .search-container {
+    margin-top: var(--space-md);
+  }
+}
