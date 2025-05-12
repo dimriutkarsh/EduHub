@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
       id: 'physics',
       title: 'Physics',
       icon: 'fa-atom',
-      description: 'Short and Regular class notes of Engineering Physics',
+      description: 'practicals and Assignments of Engineering Physics',
       notesCount: 36,
       short_url: 'https://drive.google.com/file/d/1ir6TSWSNuWw_bhGNEyjfMo6C7kAyY4gy/view?usp=drive_link',
       regular_url: ''
@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', function() {
       id: 'chemistry',
       title: 'Chemistry',
       icon: 'fa-flask',
-      description: 'Short and Regular class notes of Engineering Chemistry',
+      description: 'practicals and assignments of Engineering Chemistry',
       notesCount: 28,
       short_url: '',
       regular_url: ''
@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       id: 'electronics',
       title: 'Electronics',
       icon: 'fa-microchip',
-      description: 'Short and Regular class notes of Basic Electronics Engineering',
+      description: 'practicals and Assignments of Basic Electronics Engineering',
       notesCount: 25,
       short_url: '',
       regular_url: ''
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', function() {
       id: 'Electrical',
       title: 'Electrical',
       icon: 'fa-book',
-      description: 'Short and Regular class notes of Basic Electrical Engineering',
+      description: 'practicals and Assignments of Basic Electrical Engineering',
       notesCount: 31,
       short_url: '',
       regular_url: ''
@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function() {
       id: 'Mechanical',
       title: 'Mechanical',
       icon: 'fa-landmark',
-      description: 'Short and Regular class notes of Basic Mechanical Engineering',
+      description: 'practicals of Basic Mechanical Engineering',
       notesCount: 27,
       short_url: '',
       regular_url: ''
@@ -132,38 +132,38 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
   
-  // Show note type selection modal
-  function showNoteTypeModal(subjectId) {
-    const subject = subjects.find(s => s.id === subjectId);
-    if (!subject) return;
+//   // Show note type selection modal
+//   function showNoteTypeModal(subjectId) {
+//     const subject = subjects.find(s => s.id === subjectId);
+//     if (!subject) return;
     
-    // Update modal title to include subject
-    const modalTitle = document.querySelector('.modal-title');
-    modalTitle.textContent = `Select Notes Type: ${subject.title}`;
+//     // Update modal title to include subject
+//     const modalTitle = document.querySelector('.modal-title');
+//     modalTitle.textContent = `Select Notes Type: ${subject.title}`;
     
-    noteTypeModal.classList.add('active');
+//     noteTypeModal.classList.add('active');
     
-    // Update event listeners for note type options
-    noteTypeOptions.forEach(option => {
-      const type = option.dataset.type;
+//     // Update event listeners for note type options
+//     noteTypeOptions.forEach(option => {
+//       const type = option.dataset.type;
       
-      // Remove old event listeners
-      const newOption = option.cloneNode(true);
-      option.parentNode.replaceChild(newOption, option);
+//       // Remove old event listeners
+//       const newOption = option.cloneNode(true);
+//       option.parentNode.replaceChild(newOption, option);
       
-      // Add new event listener
-      newOption.addEventListener('click', function() {
-        const url = type === 'short' ? subject.short_url : subject.regular_url;
+//       // Add new event listener
+//       newOption.addEventListener('click', function() {
+//         const url = type === 'short' ? subject.short_url : subject.regular_url;
         
-        if (url) {
-          window.open(url, '_blank');
-          noteTypeModal.classList.remove('active');
-        } else {
-          alert(`No ${type === 'short' ? 'short notes' : 'regular notes'} available for ${subject.title}. Please configure the link in admin settings.`);
-        }
-      });
-    });
-  }
+//         if (url) {
+//           window.open(url, '_blank');
+//           noteTypeModal.classList.remove('active');
+//         } else {
+//           alert(`No ${type === 'short' ? 'short notes' : 'regular notes'} available for ${subject.title}. Please configure the link in admin settings.`);
+//         }
+//       });
+//     });
+//   }
   
   // Setup event listeners
   function setupEventListeners() {
@@ -199,4 +199,6 @@ document.addEventListener('DOMContentLoaded', function() {
   
   // Initialize the page
   init();
-})
+});
+
+
